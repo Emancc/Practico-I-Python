@@ -9,7 +9,13 @@ mostrar los resultados en una pagina diferente.
 **API**- https://api.open-meteo.com/v1/forecast?latitude=-31.42&longitude=-64.18&current_weather=true
 <hr>
 
-## documentacion
+## Muestra del trabajo
+<div style="display: flex; width: 800px; height: 800px">
+  <img src="muestra/inicio.png" alt="inicio" width="400px">
+  <img src="muestra/consulta.png" alt="consulta" width="400px">
+</div>
+
+## Documentacion
 > [!NOTE]
 > https://open-meteo.com/en/docs?forecast_hours=1&timezone=GMT&daily=weather_code&current=weather_code
 
