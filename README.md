@@ -11,8 +11,8 @@ mostrar los resultados en una pagina diferente.
 
 ## Muestra del trabajo
 <div style="display: flex; width: 800px; height: 800px">
-  <img src="muestra/inicio.png" alt="inicio" width="400px">
-  <img src="muestra/consulta.png" alt="consulta" width="400px">
+  <img src="muestra/inicio.png" alt="inicio" width="380px">
+  <img src="muestra/consulta.png" alt="consulta" width="380px">
 </div>
 
 ## Documentacion
