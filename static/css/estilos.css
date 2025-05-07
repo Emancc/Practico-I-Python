@@ -12,16 +12,25 @@ header {
     flex-direction: column;
     background-color: rgb(45, 45, 45);
     color: antiquewhite;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width:100vw;
-    height: auto;
+    height: 150px;
     gap:20px;
 }
 
 nav a{
     text-decoration: none;
     color:white;
+    background-color: #589;
+    border-radius: 5px;
+    padding: 20px;
+    
+}
+nav a:hover{
+    background-color: #584;
+    border-radius: 5px;
+    text-decoration: underline;
 }
 header h1{
     text-align: center;
@@ -39,11 +48,15 @@ main ul li{
 main ul li a{
     text-decoration: none;
     color: brown;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 main ul li a:hover {
-    background-color: rgb(84, 84, 84);    
-    color: white;
+    text-decoration: underline;
+    /* background-color: rgb(84, 84, 84);     */
+    color: #584;
+    text-transform: uppercase;
 }
 
 footer{
@@ -53,4 +66,21 @@ footer{
     justify-content: center;
     background-color: black;
     color: aliceblue;
+}
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(46, 46, 46);
+    color: aliceblue;
+    width: 400px;
+    height: 400px;
+    clip-path: polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%, 0 25%);
+    margin: 100px auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor span{
+    color: #584;
+    font-size: 30px;
 }

@@ -8,15 +8,12 @@
     <h2>Lista de ciudades para consultar</h2>
 
     <ul>
-        <li><a href="#">Buenos Aires</a></li>
-        <li><a href="#">Córdoba</a></li>
-        <li><a href="#">Madrid</a></li>
-        <li><a href="#">Nueva York</a></li>
-        <li><a href="#">Tokio</a></li>
-        <li><a href="#">Paris</a></li>
-        <li><a href="#">Londres</a></li>
-        <li><a href="#">Sídney</a></li>
-        <li><a href="#">Ciudad de México</a></li>
-        <li><a href="#">El Cairo</a></li>
+        {% for ciudad, datos in ciudades.items() %}
+            <li><a href="/clima?ciudad={{ ciudad }}">{{ ciudad }}</a></li>
+            <br>
+        {% endfor %}
     </ul>
+
+
+
 {% endblock %}

@@ -2,9 +2,26 @@
 
 
 {% block title %}
-    clima
+    clima en {{ciudad}}
+{% endblock %}
+
+{% block paginas%}
+<a href="{{url_for('index')}}">Lista de ciudades</a>
 {% endblock %}
 
 {% block main %}
-    <h1>este es el clima</h1>
+<div class="contenedor">
+    <h3>Clima en <span>{{ ciudad }}</span></h3>
+    {% if temperatura is not none %}
+        <p>Temperatura: {{ temperatura }} °C</p>
+    {% endif %}
+    {% if velocidad_viento is not none %}
+        <p>Velocidad del viento: {{ velocidad_viento }} km/h</p>
+    {% endif %}
+    {% if descripcion_clima %}
+        <p>Condición: {{ descripcion_clima }}</p>
+    {% endif %}
+
+</div>
+
 {% endblock %}
