@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/estilos.css')}}">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <!-- header -->
+     <header>
+         {% block header%}
+         <h1>Climas</h1>
+         <nav>            
+            <a href="{{url_for('index')}}">Inicio</a>
+            <a href="{{url_for('clima')}}">Clima</a>
+         </nav>
+     
+         {% endblock %}         
+     </header>
+
+    <!-- main -->
+     <main>
+         {% block main %} {% endblock %}
+     </main>
+     
+    <footer>
+        {% block footer%} 
+        <div>
+            <span> 🐍2025.   Todos los derechos reservados</span>
+        </div>
+        {% endblock %}
+    </footer>
+</body>
+</html>
