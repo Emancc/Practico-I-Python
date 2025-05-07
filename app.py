@@ -6,8 +6,10 @@ app = Flask(__name__)
 
 ciudades = {
     "Río Cuarto": {"lat": -33.1333, "lon": -64.3500},
-    "Mendoza" : {"lat": -32.8833, "lon": -68.8167},
-    "Santa Fe" : {"lat": -31.6333, "lon": -60.7000},
+    "Mendoza": {"lat": -32.8833, "lon": -68.8167},
+    "Santa Fe": {"lat": -31.6333, "lon": -60.7000},
+    "Higueras": {"lat": -31.6333, "lon": -60.7000},
+    "Rosario": {"lat": -31.6333, "lon": -60.7000},
     "Buenos Aires": {"lat": -34.6037, "lon": -58.3816},
     "Córdoba": {"lat": -31.4201, "lon": -64.1888},
     "Madrid": {"lat": 40.4168, "lon": -3.7038},
@@ -17,20 +19,22 @@ ciudades = {
     "Londres": {"lat": 51.5074, "lon": -0.1278},
     "Sídney": {"lat": -33.8688, "lon": 151.2093},
     "Ciudad de México": {"lat": 19.4326, "lon": -99.1332},
-    "El Cairo": {"lat": 30.0444, "lon": 31.2357}
+    "El Cairo": {"lat": 30.0444, "lon": 31.2357},
 }
 
-@app.route('/')
-def index():
-    return render_template('index.html', ciudades=ciudades)
 
-@app.route('/clima')
+@app.route("/")
+def index():
+    return render_template("index.html", ciudades=ciudades)
+
+
+@app.route("/clima")
 def clima():
-    nombre = request.args.get('ciudad')
+    nombre = request.args.get("ciudad")
     latitud = ciudades[nombre]["lat"]
     longitud = ciudades[nombre]["lon"]
 
-    url_clima = f'https://api.open-meteo.com/v1/forecast?latitude={latitud}&longitude={longitud}&current_weather=true'
+    url_clima = f"https://api.open-meteo.com/v1/forecast?latitude={latitud}&longitude={longitud}&current_weather=true"
 
     weather_codes = {
         0: "Despejado",
@@ -62,15 +66,23 @@ def clima():
         96: "Tormenta eléctrica con granizo ligero",
         99: "Tormenta eléctrica con granizo fuerte",
     }
-    descripcion_clima = weather_codes.get(requests.get(url_clima).json()["current_weather"].get("weathercode"), "Información no disponible")
+    descripcion_clima = weather_codes.get(
+        requests.get(url_clima).json()["current_weather"].get("weathercode"),
+        "Información no disponible",
+    )
 
-    return render_template("clima.html",
-            ciudad=nombre,
-            temperatura=requests.get(url_clima).json()["current_weather"].get("temperature"),
-            velocidad_viento=requests.get(url_clima).json()["current_weather"].get("windspeed"),
-            descripcion_clima=descripcion_clima)
+    return render_template(
+        "clima.html",
+        ciudad=nombre,
+        temperatura=requests.get(url_clima)
+        .json()["current_weather"]
+        .get("temperature"),
+        velocidad_viento=requests.get(url_clima)
+        .json()["current_weather"]
+        .get("windspeed"),
+        descripcion_clima=descripcion_clima,
+    )
 
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run()

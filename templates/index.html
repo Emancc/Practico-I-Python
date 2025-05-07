@@ -4,10 +4,12 @@
     Inicio
 {% endblock %}
 
+
 {% block main %}
     <h2>Lista de ciudades para consultar</h2>
 
     <ul>
+        <!-- creacion de la lista usando un for iterando por cada uno de los items del diccionario -->
         {% for ciudad, datos in ciudades.items() %}
             <li><a href="/clima?ciudad={{ ciudad }}">{{ ciudad }}</a></li>
             <br>

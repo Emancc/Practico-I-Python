@@ -2,26 +2,37 @@
 
 
 {% block title %}
+
     clima en {{ciudad}}
+
 {% endblock %}
+
 
 {% block paginas%}
-<a href="{{url_for('index')}}">Lista de ciudades</a>
+
+    <a href="{{url_for('index')}}">Lista de ciudades</a>
+
 {% endblock %}
 
-{% block main %}
-<div class="contenedor">
-    <h3>Clima en <span>{{ ciudad }}</span></h3>
-    {% if temperatura is not none %}
-        <p>Temperatura: {{ temperatura }} °C</p>
-    {% endif %}
-    {% if velocidad_viento is not none %}
-        <p>Velocidad del viento: {{ velocidad_viento }} km/h</p>
-    {% endif %}
-    {% if descripcion_clima %}
-        <p>Condición: {{ descripcion_clima }}</p>
-    {% endif %}
 
-</div>
+{% block main %}
+
+    <div class="contenedor">
+
+        <h2>Clima en <span class="ciudad">{{ ciudad }}</span></h2>
+
+        <!-- creacion de los resultados en caso de que los campos no esten vacios imprime -->
+
+        {% if temperatura is not none %}
+            <p>Temperatura: <span>{{ temperatura }} °C</span></p>
+        {% endif %}
+        {% if velocidad_viento is not none %}
+            <p>Velocidad del viento: <span>{{ velocidad_viento }} km/h</span></p>
+        {% endif %}
+        {% if descripcion_clima %}
+            <p>Condición: <span>{{ descripcion_clima }}</span></p>
+        {% endif %}
+
+    </div>
 
 {% endblock %}

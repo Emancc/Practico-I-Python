@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- creando la ruta para agragarle estilos -->
     <link rel="stylesheet" href="{{url_for('static', filename='css/estilos.css')}}">
     <title>{% block title %} {% endblock %}</title>
 </head>
 <body>
+    
     <!-- header -->
      <header>
          {% block header%}
-         <h1>Climas</h1>
+         <h1>CLIMAS</h1>
          <nav>
             {% block paginas%}{% endblock %}            
          </nav>
@@ -22,11 +24,12 @@
      <main>
          {% block main %} {% endblock %}
      </main>
-     
+
+     <!-- footer -->
     <footer>
         {% block footer%} 
         <div>
-            <span> 🐍2025 Clima.Todos los derechos reservados</span>
+            <span> ©2025 Clima.Todos los derechos reservados</span>
         </div>
         {% endblock %}
     </footer>

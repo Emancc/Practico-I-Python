@@ -7,6 +7,7 @@ body{
     font-family: 'Courier New', Courier, monospace;
 
 }
+
 header {
     display: flex;
     flex-direction: column;
@@ -14,8 +15,9 @@ header {
     color: antiquewhite;
     justify-content: space-around;
     align-items: center;
+    padding-top: 30px;
     width:100vw;
-    height: 150px;
+    height: 100px;
     gap:20px;
 }
 
@@ -24,22 +26,25 @@ nav a{
     color:white;
     background-color: #589;
     border-radius: 5px;
-    padding: 20px;
-    
+    padding: 20px;    
 }
+
 nav a:hover{
     background-color: #584;
     border-radius: 5px;
     text-decoration: underline;
 }
+
 header h1{
     text-align: center;
     font-size: 45px;
     margin: 5px;   
 }
+
 main{
     padding: 50px 200px;
 }
+
 main ul li{
     color: transparent;
     margin-left: 20px;
@@ -54,7 +59,6 @@ main ul li a{
 
 main ul li a:hover {
     text-decoration: underline;
-    /* background-color: rgb(84, 84, 84);     */
     color: #584;
     text-transform: uppercase;
 }
@@ -67,8 +71,10 @@ footer{
     background-color: black;
     color: aliceblue;
 }
+
 .contenedor{
     display: flex;
+    font-size: 18px;
     flex-direction: column;
     background-color: rgb(46, 46, 46);
     color: aliceblue;
@@ -80,7 +86,12 @@ footer{
     justify-content: center;
 }
 
-.contenedor span{
+.contenedor .ciudad{
     color: #584;
     font-size: 30px;
+}
+
+.contenedor p span{
+    color: #6eaec3;
+    font-weight: bolder;
 }
